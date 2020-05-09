@@ -1,7 +1,9 @@
 const http = require("http");
 const hostname = '160.153.34.103';
 const port = 3000;
+import express from 'express';
 
+const app = express();
 //Create HTTP server and listen on port 3000 for requests
 const server = http.createServer((req, res) => {
 
