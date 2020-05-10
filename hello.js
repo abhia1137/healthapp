@@ -1,6 +1,5 @@
 const http = require("http");
-const hostname = '18.218.140.217';
-const port = 3000;
+// const hostname = '18.218.140.217';
 const express = require('express');
 var router = express.Router();
 //Create HTTP server and listen on port 3000 for requests
@@ -17,6 +16,6 @@ router.get('/', function(req, res) {
 })
 
 //listen for request on port 3000, and as a callback function have the port listened on logged
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+server.listen(3000, () => {
+    console.log(`Server running at `);
 });
