@@ -1,9 +1,8 @@
 const http = require("http");
 const hostname = '18.218.140.217';
 const port = 3000;
-import express from 'express';
-
-const app = express();
+const express = require('express');
+var router = express.Router();
 //Create HTTP server and listen on port 3000 for requests
 const server = http.createServer((req, res) => {
 
@@ -13,7 +12,7 @@ const server = http.createServer((req, res) => {
     res.end('Hello World\n');
 });
 
-app.get('/', function(req, res) {
+router.get('/', function(req, res) {
     res.send('good working')
 })
 
