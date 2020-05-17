@@ -7,9 +7,33 @@ module.exports = function(mongoose, CONFIG) {
         password: {
             type: String,
             required: true
+        },
+        state: {
+            type: String,
+
+        },
+        city: {
+            type: String,
+
+        },
+        contactNo: {
+            type: String,
+
+        },
+        firstName: {
+            type: String,
+
+        },
+        lastname: {
+            type: String,
+
+        },
+        gender: {
+            type: String,
+
         }
     });
-    var coll = mongoose.model('login', schema);
+    var coll = mongoose.model('logins', schema);
     return coll;
 
 }

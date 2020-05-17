@@ -1,7 +1,7 @@
 var mongoose = require('./dbconnection').getMongoos();
 var models = {};
 exports.init = function() {
-    models.login = require('./daos/login')(mongoose);
+    models.logins = require(__dirname + '/daos/login')(mongoose);
 
     return models;
 }

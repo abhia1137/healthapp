@@ -1,19 +1,23 @@
 'use strict';
 let mongoose = require('mongoose');
-//let utils = require('../../services/utils/utils');
-
-exports.init = function(CONFIG) {
+exports.init = async(CONFIG) => {
     var db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'connection error: '));
+    mongoose.connection.on('open', function(ref) {
+        console.log('Connected to mongo server.');
+        //trying to get collection names
+        mongoose.connection.db.listCollections().toArray(function(err, names) {
+            // console.log(names); // [{ name: 'dbname.myCollection' }]
+            // module.exports.Collection = names;
+        });
+    })
 
+    mongoose.connect(CONFIG, { useUnifiedTopology: true, useNewUrlParser: true }, )
 
-    mongoose.connect(CONFIG, { useNewUrlParser: true }, function(err, data) {
-        // console.log(err, data);
-        console.info('connected to db', );
-    });
-    // console.log('Mongosse', mongoose)
-    return mongoose;
+    return mongoose
 }
 
 exports.getMongoos = function() {
+
     return mongoose;
 }

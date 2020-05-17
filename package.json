@@ -1,25 +1,25 @@
 {
-  "name": "healthapp",
-  "version": "1.0.0",
-  "description": "healthapp",
-  "main": "hello.js",
-  "dependencies": {
-    "express": "^4.17.1",
-    "html-pdf": "^2.2.0",
-    "mongodb": "^3.5.7"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/abhia1137/healthapp.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/abhia1137/healthapp/issues"
-  },
-  "homepage": "https://github.com/abhia1137/healthapp#readme"
+    "name": "healthapp",
+    "version": "1.0.0",
+    "description": "healthapp",
+    "main": "hello.js",
+    "dependencies": {
+        "express": "^4.17.1",
+        "html-pdf": "^2.2.0",
+        "mongodb": "^3.5.7"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/abhia1137/healthapp.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/abhia1137/healthapp/issues"
+    },
+    "homepage": "https://github.com/abhia1137/healthapp#readme"
 }
