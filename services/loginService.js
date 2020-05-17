@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 let key = "5c7d4ab121b963b9f21ffe79dc05eb5dc5069ed0319cc879a20720a3c3e7588133c658aa4d92fb8ab9c0be8084dafb7327768b2109f6ba914e77ceafc0431f8f";
 exports.loginUsesr = function(user) {
     var deferred = Q.defer();
-    loginModel.logins.findOne({}, { 'password': 0, }, { 'email': user.email, 'password': user.password }, function(err, docs) {
+    loginModel.logins.findOne({ $and: [{ 'email': user.email, 'password': user.password }] }, function(err, docs) {
         console.log('data', docs);
         if (docs) {
             let data = { name: user.email };
