@@ -80,3 +80,91 @@ exports.signUp = function(userDetails) {
 
     return deferred.promise;
 };
+
+exports.getPrograms = function() {
+    var deferred = Q.defer();
+    loginModel.programs.find({}, function(err, docs) {
+        if (!err) {
+            deferred.resolve({
+                err: null,
+                result: docs
+            });
+        } else {
+            deferred.resolve({
+                err: err,
+                result: null
+            });
+        }
+    });
+
+    return deferred.promise;
+
+}
+
+
+
+exports.getAllTrainers = function() {
+    var deferred = Q.defer();
+    loginModel.trainers.find({}, function(err, docs) {
+        if (!err) {
+            deferred.resolve({
+                err: null,
+                result: docs
+            });
+        } else {
+            deferred.resolve({
+                err: err,
+                result: docs
+            });
+        }
+    });
+    return deferred.promise;
+}
+
+
+exports.getsessionDetails = function() {
+    var deferred = Q.defer();
+    loginModel.sessions.find({}, function(err, docs) {
+        console.log(err, docs)
+        if (!err) {
+            deferred.resolve({
+                err: err,
+                result: docs
+            });
+        } else {
+            deferred.resolve({
+                err: err,
+                result: docs
+            });
+        }
+    });
+    return deferred.promise;
+}
+
+exports.insertSessions = function(details) {
+    var deferred = Q.defer();
+
+    console.log(details)
+    let obj = {
+        "sessionType": details.sessionType,
+        "price": details.price,
+        "noOfSessions": details.noOfSessions
+    }
+
+    console.log(obj);
+    let data = new loginModel.sessions(obj)
+    data.save(function(err, docs) {
+        if (!err) {
+            deferred.resolve({
+                err: err,
+                result: docs
+            });
+        } else {
+            deferred.resolve({
+                err: err,
+                result: docs
+            });
+        }
+    });
+    return deferred.promise;
+}

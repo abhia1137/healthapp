@@ -11,4 +11,27 @@ module.exports = function(app) {
             res.send(data);
         });
     });
+
+    app.get('/getActivePrograms', function(req, res) {
+        loginController.getPrograms().then(function(data) {
+            res.send(data);
+        });
+    })
+    app.get('/getAllTrainers', function(req, res) {
+        loginController.getAllTrainers().then(function(data) {
+            res.send(data);
+        });
+    });
+
+    app.get('/getSessionDetails', function(req, res) {
+        loginController.getSessionDetails().then(function(data) {
+            res.send(data);
+        });
+    });
+
+    app.post('/insertSessions', function(req, res) {
+        loginController.insertSessions(req.body).then(function(data) {
+            res.send(data);
+        });
+    });
 }
