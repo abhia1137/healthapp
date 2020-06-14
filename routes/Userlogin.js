@@ -23,7 +23,7 @@ module.exports = function(app) {
         });
     });
 
-    app.get('/getSessionDetails', function(req, res) {
+    app.get('/getAllDetails', function(req, res) {
         loginController.getSessionDetails().then(function(data) {
             res.send(data);
         });

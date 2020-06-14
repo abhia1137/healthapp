@@ -2,7 +2,6 @@ module.exports = function(mongoose, CONFIG) {
     var schema = new mongoose.Schema({
         trainerId: {
             type: String,
-
         },
         name: {
             type: String,
