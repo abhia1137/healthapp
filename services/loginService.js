@@ -36,7 +36,7 @@ exports.loginUsesr = function(user) {
 exports.signUp = function(userDetails) {
     // console.log('userDetails', userDetails)
     var deferred = Q.defer();
-    if (!userDetails.password || !userDetails.state || !userDetails.city || !userDetails.contactNo || !userDetails.firstname || !userDetails.lastname || !userDetails.gender) {
+    if (!userDetails.password || !userDetails.contactNo || !userDetails.firstname || !userDetails.lastname || !userDetails.gender) {
         deferred.resolve({
             err: null,
             result: "Missing Required Fields",
